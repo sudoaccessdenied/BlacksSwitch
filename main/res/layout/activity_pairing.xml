@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pairing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="1"
+    tools:context="com.systutorials.blackswitch.Pairing"
+
+
+    >
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:padding="16dp"
+        android:text="@string/paired"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+
+
+        android:textColor="#607D8B"
+        android:textSize="24sp" />
+
+    <ListView
+        android:id="@+id/listView_pairing"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:cacheColorHint="@color/black_overlay"
+        android:clickable="true"
+        android:clipChildren="false"
+        android:divider="#FFCC00"
+        android:dividerHeight="1px"
+        android:fadeScrollbars="true"
+        android:fastScrollAlwaysVisible="false"
+        android:fastScrollEnabled="true"
+        android:padding="16dp"
+        android:visibility="visible" />
+
+</LinearLayout>

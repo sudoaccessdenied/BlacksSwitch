@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BlackSwitch</string>
+    <string name="created_by">Created by : Mr.Nishant</string>
+    <string name="paired"> Showing Paired Devices: </string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="s1">Light One</string>
+
+    <string name="s2">Light Two</string>
+
+    <string name="s3">Light Three</string>
+
+    <string name="s4">Fan</string>
+
+    <string name="s5">All</string>
+
+    <string name="step1"> step.1)Turn on Bluetooth.\n
+        step.2)Pair with HC-05.\n
+        step.3)Enter Default Password.i.e 1234.\n
+        step.4)Now you can Control Arduino.\n</string>
+
+
+</resources>
