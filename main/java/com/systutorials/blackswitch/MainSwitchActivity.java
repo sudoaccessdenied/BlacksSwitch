@@ -15,24 +15,18 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.reward.RewardItem;
-import com.google.android.gms.ads.reward.RewardedVideoAd;
-import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.UUID;
 
-public class MainSwitchActivity extends AppCompatActivity implements RewardedVideoAdListener{
+public class MainSwitchActivity extends AppCompatActivity {
     UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
     private BluetoothAdapter bluetoothAdapter = null;
     private BluetoothSocket mmSocket = null;
     private OutputStream outStream = null;
-    private RewardedVideoAd mAd;
-    private AdView mAdView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,31 +34,21 @@ public class MainSwitchActivity extends AppCompatActivity implements RewardedVid
         setContentView(R.layout.activity_main_switch);
 
 
-        MobileAds.initialize(this, "ca-app-pub-3848796154418092~3033007700");
+        
 
-
-
-
-        mAd = MobileAds.getRewardedVideoAdInstance(this);
-        mAd.setRewardedVideoAdListener(this);
-        rewardVideoLoader();
 
 
 
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
+ 
 
     }
-private void rewardVideoLoader() {
-    mAd.loadAd("ca-app-pub-3848796154418092/5822822577", new AdRequest.Builder().build());
 
-}
     @Override
     protected void onResume() {
-        mAd .resume(this);
-        super.onResume();
+        
+       super.onResume();
 
 
 
@@ -338,16 +322,8 @@ private void rewardVideoLoader() {
 
         Button button1 = (Button) findViewById(R.id.button1);
 
-        if (mAd.isLoaded()) {
-
-            mAd.show();
-        } else {
-
             Intent about = new Intent(getApplicationContext(), About.class);
             startActivity(about);
-
-        }
-
     }
 
 
@@ -375,41 +351,11 @@ private void rewardVideoLoader() {
         }
     }
 
-    @Override
-    public void onRewardedVideoAdLoaded() {
-        Toast.makeText(this, "Loaded", Toast.LENGTH_SHORT).show();    }
+    
+    
 
-    @Override
-    public void onRewardedVideoAdOpened() {
-    }
+    
 
-    @Override
-    public void onRewardedVideoStarted() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdClosed() {
-
-    }
-
-    @Override
-    public void onRewarded(RewardItem rewardItem) {
-        Intent about = new Intent(getApplicationContext(), About.class);
-        startActivity(about);
-        Toast.makeText(this, "You have received " +rewardItem.getAmount()+"Rs "+rewardItem.getType(), Toast.LENGTH_LONG).show();
-
-    }
-
-    @Override
-    public void onRewardedVideoAdLeftApplication() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdFailedToLoad(int i) {
-
-    }
 
 
 
